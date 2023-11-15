@@ -28,3 +28,5 @@ class BasePage:
     def getText(self, locator):
         if str(locator).endswith("XPATH"):
             text = self.driver.find_element(By.XPATH).text
+        if str(locator).endswith("ID"):
+            text = self.driver.find_element(By.ID).text
