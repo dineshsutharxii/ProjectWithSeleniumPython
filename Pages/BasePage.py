@@ -5,7 +5,7 @@ from selenium.webdriver.common.by import By
 
 class BasePage:
     def __init__(self, driver):
-        self.driver = driver;
+        self.driver = driver
 
     def click(self, locator):
         if str(locator).endswith("XPATH"):
@@ -24,6 +24,8 @@ class BasePage:
             self.driver.find_elements(By.XPATH)[index].click()
         if str(locator).endswith("ID"):
             self.driver.find_elements(By.ID)[index].click()
+        if str(locator).endswith("LINK_TEXT"):
+            self.driver.find_elements(By.LINK_TEXT)[index].click()
 
     def getText(self, locator):
         if str(locator).endswith("XPATH"):
